@@ -1,5 +1,3 @@
-import Header from "./topbar";
-
 
 function Profile() {
   return (
@@ -128,7 +126,7 @@ function Profile() {
                         <p>Building scalable web applications using Django backend with React frontend, deployed on cloud infrastructure.</p>
                     </div>
                 </div>
-                <a href="/credentials" className="cta-button">View Credentials</a>
+                <a href="./credentials" className="cta-button">View Credentials</a>
             </div>
         </div>
   );

@@ -1,6 +1,7 @@
 import "../styles/styles.css";
 import SideBar from "./sidebar";
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function Header() {
     
@@ -11,10 +12,10 @@ function Header() {
                     <h1 className="name">⟢Eugenius</h1>
                 </a>
                 <nav>
-                    <a href="/profile">Profle</a>
-                    <a href="/projects">Projects</a>
-                    <a href="/credentials">Credentials</a>
-                    <a href="/documents">Timeline</a>
+                    <Link to="/profile">Profile</Link>
+                    <Link to="/projects">Projects</Link>
+                    <Link to="/credentials">Credentials</Link>
+                    <Link to="/documents">Timeline</Link>
                 </nav>
                 <div><SideBar/></div>
             </header>

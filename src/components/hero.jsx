@@ -1,12 +1,13 @@
 import "../styles/styles.css";
+import heropic from "../assets/IMG_1799.jpeg";
 
 function Hero() {
     return ( 
         <div className="content">
             <div className="me-img">
                 <span>
-                    <img src="IMG_1799.jpeg" />
-                    <a href="/profile" className="name-link">
+                    <img src={heropic} />
+                    <a href="Portfolio/profile" className="name-link">
                         <h3>Eugene D. Villegas</h3>
                         <h2>&#8678;</h2>
                     </a>

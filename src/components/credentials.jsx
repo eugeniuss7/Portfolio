@@ -1,34 +1,38 @@
 import Header from "./topbar";
 import { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
+import CCNA from "../assets/CCNA.jpg";
+import UC1 from "../assets/UC C++.jpg";
+import UC2 from "../assets/UC Full Stack.jpg";
+import UC3 from "../assets/UC HTML5PY3.jpg";
 
 // Mock certificate data - replace with your actual certificates
 const certificates = [
   {
     id: 1,
     title: "CCNA: Switching, Routing, and Wireless Essentials",
-    image: "CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_eugenevillegas47-gmail-com_a62396ae-76a4-42db-ada4-4fd5b37659fb_page-0001.jpg",
+    image: CCNA,
     issuer: "CISCO Network Academy",
     date: "2024"
   },
   {
     id: 2,
     title: "C++ Training Crash Course 2022",
-    image: "UC-c1724543-83ad-4f7b-a530-7c3aea50b947_page-0001.jpg",
+    image: UC1,
     issuer: "Udemy",
     date: "2024"
   },
   {
     id: 3,
     title: "CSS, Bootstrap, JavaScript, PHP Full Stack Crash Course",
-    image: "UC-d2a6f969-bd40-4c96-bee4-c0d30f840500.jpg",
+    image: UC2,
     issuer: "Udemy",
     date: "2024"
   },
   {
     id: 4,
     title: "HTML5 and Python3 Complete Course 2023",
-    image: "UC-d8ae3df3-8c4c-4dde-8ce3-ec8e80af9c28_page-0001.jpg",
+    image: UC3,
     issuer: "Udemy",
     date: "2024"
   },

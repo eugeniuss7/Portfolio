@@ -1,6 +1,5 @@
 import Header from "../components/topbar"
 import Hero from "../components/hero"
-import Projects from "../components/projects"
 import "../styles/styles.css"
 import "../styles/scrollnav.css"
 
