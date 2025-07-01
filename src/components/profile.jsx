@@ -1,6 +1,8 @@
 
 function Profile() {
+    
   return (
+    
         <div className="container" id="container">
             <div className="page page-1" data-page="1">
                 <div className="floating-particles">
@@ -43,7 +45,6 @@ function Profile() {
                     <div className="cert-item">
                         <h4>CISCO Network • 2024-2025</h4>
                         <li>CCNA: Switching, Routing, and Wireless Essentials</li>
-                        <li>CCNA: Enterprise Networking, Security, and Automation</li>
                     </div>
                 </div>
             </div>
@@ -55,53 +56,23 @@ function Profile() {
                     <div className="particle"></div>
                     <div className="particle"></div>
                 </div>
-                <h1>Technical Skills</h1>
-                <p>Combining computer engineering fundamentals with modern web development and data science techniques.</p>
-                <div className="skills-container">
-                    <div className="skills-section">
-                        <h3>Programming Skills</h3>
-                        <div className="skill-bar">
-                            <span className="skill-name">Programming</span>
-                            <div className="progress-bar">
-                                <div className="progress" style={{width: "92%"}}></div>
-                            </div>
-                            <span className="percentage">92%</span>
-                        </div>
-                        <div className="skill-bar">
-                            <span className="skill-name">UI/UX Design</span>
-                            <div className="progress-bar">
-                                <div className="progress" style={{width: "82%"}}></div>
-                            </div>
-                            <span className="percentage">82%</span>
-                        </div>
-                        <div className="skill-bar">
-                            <span className="skill-name">Database Design</span>
-                            <div className="progress-bar">
-                                <div className="progress" style={{width: "75%"}}></div>
-                            </div>
-                            <span className="percentage">75%</span>
-                        </div>
-                        <div className="skill-bar">
-                            <span className="skill-name">Project Management</span>
-                            <div className="progress-bar">
-                                <div className="progress" style={{width: "47%"}}></div>
-                            </div>
-                            <span className="percentage">47%</span>
-                        </div>
-                    </div>
-                    <div className="tech-stack">
-                        <h3>Current Tech Stack</h3>
-                        <div className="tech-grid">
-                            <div className="tech-item">Django</div>
-                            <div className="tech-item">React</div>
-                            <div className="tech-item">Python</div>
-                            <div className="tech-item">JavaScript</div>
-                            <div className="tech-item">Cloud Database</div>
-                            <div className="tech-item">Data Analysis</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="floating-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
             </div>
+            <h1>My Current Stack</h1>
+            <p>Proficient in modern data science tools and programming languages, with expertise in machine learning, automation, and cloud technologies.</p>
+            <div class="tech-grid">
+                <div class="tech-item">C++</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">JavaScipt</div>
+                <div class="tech-item">React</div>
+                <div class="tech-item">Django</div>
+                <div class="tech-item">Apache Spark</div>
+            </div>
+                </div>
 
             <div className="page page-4" data-page="4">
                 <div className="floating-particles">

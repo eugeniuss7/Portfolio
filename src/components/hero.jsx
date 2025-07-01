@@ -1,4 +1,5 @@
 import "../styles/styles.css";
+import { Link } from "react-router-dom";
 import heropic from "../assets/IMG_1799.jpeg";
 
 function Hero() {
@@ -7,10 +8,10 @@ function Hero() {
             <div className="me-img">
                 <span>
                     <img src={heropic} />
-                    <a href="Portfolio/profile" className="name-link">
+                    <Link to="/profile" className="name-link">
                         <h3>Eugene D. Villegas</h3>
                         <h2>&#8678;</h2>
-                    </a>
+                    </Link>
                 </span>
             </div>
             <div className="hero-container">
@@ -29,7 +30,7 @@ function Hero() {
                     </span>
                     
                     <div className="button-container">
-                    <button className="btn-primary">Programming Skills</button>
+                    <Link className="btn-primary">My Certifications</Link>
                     <button className="btn-secondary">CV&#128195;</button>
                     </div>
                 </div>

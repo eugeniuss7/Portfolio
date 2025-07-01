@@ -82,7 +82,7 @@ const SideBar = () => {
         <form onSubmit={(e) => {
             e.preventDefault();
             const message = e.target.elements.message.value;
-            window.location.href = `mailto:your-email@example.com?subject=Sidebar Message&body=${encodeURIComponent(message)}`;
+            window.location.href = `mailto:eugenevillegas47@gmail.com?subject=Sidebar Message&body=${encodeURIComponent(message)}`;
         }}>
             <textarea
                 name="message"

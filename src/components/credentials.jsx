@@ -1,6 +1,7 @@
 import Header from "./topbar";
 import { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
+import { Link } from "react-router-dom";
 import CCNA from "../assets/CCNA.jpg";
 import UC1 from "../assets/UC C++.jpg";
 import UC2 from "../assets/UC Full Stack.jpg";
