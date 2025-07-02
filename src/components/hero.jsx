@@ -30,7 +30,7 @@ function Hero() {
                     </span>
                     
                     <div className="button-container">
-                    <Link className="btn-primary">My Certifications</Link>
+                    <Link to="/credentials" className="btn-primary">My Certifications</Link>
                     <button className="btn-secondary">CV&#128195;</button>
                     </div>
                 </div>

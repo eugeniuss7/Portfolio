@@ -14,22 +14,21 @@ body {
 }
 
 .container{
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
 }
 
 header {
-    height: 74px;
-    min-height: 60px;
-    max-height: 74px;
+    min-height: 2.2vw;
+    max-height: 4.7vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.47rem;
-    margin-left: 22px;
-    margin-right: 22px;
+    padding: 0.47vw;
+    margin-left: 2.9vw;
+    margin-right: 2.9vw;
 }
 
 header a{
@@ -37,10 +36,10 @@ header a{
 }
 header h1 {
     margin: 0;
-    font-size: 2.22rem;
+    font-size: 2.22vw;
     font-weight: 470;
-    text-shadow: white 0px 0px 22px, #D3D3FF 0px 0px 47px;
-    padding: 4px;
+    text-shadow: white 0px 0px 2.2vw, #D3D3FF 0px 0px 4.7vw;
+    padding: 0.4vw;
 }
 
 nav {
@@ -52,8 +51,8 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: rgba(116, 185, 255, 0.9);;
-    font-size: 1rem;
+    color: rgba(116, 185, 255, 0.9);
+    font-size: 1vw;
     transition: color 0.3s ease-in-out;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -72,9 +71,9 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: right;
-    height: 47px;
-    width: 100px;
-    padding: 5px;
+    height: 4.7vw;
+    width: 13vw;
+    padding: 0.5vw;
     opacity: 0.47;
     transition: 0.3s ease-in-out;
 }
@@ -130,15 +129,15 @@ nav a:hover {
 
 .me-img h3{
     position: absolute;
-    font-size: 1.47rem;
+    font-size: 1.22vw;
     color: rgba(108, 92, 231, 0.9);
     text-shadow: rgba(108, 92, 231, 0.6) 0px 0px 10px;
 }
 
 .me-img h2{
-    margin-left: 210px;
+    margin-left: 13%;
     position: absolute;
-    font-size: 1.47rem;
+    font-size: 1.22vw;
     color: rgba(108, 92, 231, 0.9);
     text-shadow: rgba(108, 92, 231, 0.6) 0px 0px 10px;
     animation: moveArrowX 1.5s ease-in-out infinite;
@@ -157,11 +156,14 @@ nav a:hover {
 }
 
 .line-separator {
-    margin-top: 10px;
+    margin-top: 0.47vw;
     width: 100% !important;
     border-bottom: #a29bfe solid 1px;
 }
 
+.line-separator nav {
+    font-size: 22vw;
+}
 
 /* Hero Section */
 
@@ -170,13 +172,13 @@ nav a:hover {
     top: 0;
     right: 0;
     width: 40vw;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
     z-index: 10;
     overflow-y: auto;
+    margin-top: 7%;
     margin-right: 10%;
 }
 
@@ -185,7 +187,6 @@ nav a:hover {
     width: 100%;
     text-align: center;
     color: white;
-    height: auto;
     padding: 2rem 1rem;
     height: min-content;
     max-width: 700px;
@@ -591,16 +592,17 @@ h1 {
     }
 }
 
-    .sidebar-container {
+.sidebar-container {
     position: relative;
     display: flex;
     height: 100vh;
+    font-size: 12vw;
 }
 
 /* Toggle Button Styles */
 .sidebar-toggle {
     position: fixed;
-    top: 20px;
+    top: 1.4vw;
     right: 22px; /* Changed from left */
     width: 50px;
     height: 50px;
