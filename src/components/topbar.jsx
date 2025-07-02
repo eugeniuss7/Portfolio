@@ -8,9 +8,9 @@ function Header() {
     return (
         <div className="line-separator">
             <header>
-                <a href="/">
+                <Link to="/">
                     <h1 className="name">⟢Eugenius</h1>
-                </a>
+                </Link>
                 <nav>
                     <Link to="/profile">Profile</Link>
                     <Link to="/projects">Projects</Link>
