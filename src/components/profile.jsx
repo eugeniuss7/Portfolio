@@ -97,7 +97,7 @@ function Profile() {
                         <p>Building scalable web applications using Django backend with React frontend, deployed on cloud infrastructure.</p>
                     </div>
                 </div>
-                <a href="./credentials" className="cta-button">View Credentials</a>
+                <Link to="/credentials" className="cta-button">View Credentials</Link>
             </div>
         </div>
   );
