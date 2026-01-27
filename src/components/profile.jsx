@@ -82,20 +82,20 @@ function Profile() {
                     <div className="particle"></div>
                     <div className="particle"></div>
                 </div>
-                <h1>Current Focus</h1>
-                <p>Expanding expertise in data science through structured learning and practical application of time-series analysis techniques.</p>
+                <h1>Knowledge and Focus Areas</h1>
+                <p>Expanding expertise in data science through structured learning and practical application of embedded systems.</p>
                 <div className="focus-container">
                     <div className="focus-item">
-                        <h3>📚 O'Reilly Data Science</h3>
+                        <h3>Data Science & Analytics</h3>
                         <p>Deep diving into comprehensive data science methodologies and best practices through industry-leading publications.</p>
                     </div>
                     <div className="focus-item active">
-                        <h3>📈 Time-Series Analysis</h3>
-                        <p>Currently studying advanced time-series forecasting techniques, pattern recognition, and predictive modeling applications.</p>
+                        <h3>Embedded Systems</h3>
+                        <p>Currently have a project on embedded systems design and implementation, focusing on real-time operating systems and microcontroller programming.</p>
                     </div>
                     <div className="focus-item">
-                        <h3>☁️ Full-Stack Development</h3>
-                        <p>Building scalable web applications using Django backend with React frontend, deployed on cloud infrastructure.</p>
+                        <h3>Full-Stack Development</h3>
+                        <p>Built scalable web applications using Django backend with React frontend.</p>
                     </div>
                 </div>
                 <Link to="/credentials" className="cta-button">View Credentials</Link>

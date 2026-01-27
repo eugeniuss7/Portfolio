@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 import { Link } from "react-router-dom";
 import CCNA from "../assets/CCNA.jpg";
+import CCNA2 from "../assets/CCNA2.jpg";
+import CCNA3 from "../assets/CCNA3.jpg";
 import UC1 from "../assets/UC C++.jpg";
 import UC2 from "../assets/UC Full Stack.jpg";
 import UC3 from "../assets/UC HTML5PY3.jpg";
@@ -11,27 +13,41 @@ import UC3 from "../assets/UC HTML5PY3.jpg";
 const certificates = [
   {
     id: 1,
+    title: "CyberOps Associate",
+    image: CCNA3,
+    issuer: "CISCO Network Academy",
+    date: "2024"
+  },
+  {
+    id: 2,
+    title: "CCNA: Enterprise Networking, Security, and Automation",
+    image: CCNA2,
+    issuer: "CISCO Network Academy",
+    date: "2024"
+  },
+  {
+    id: 3,
     title: "CCNA: Switching, Routing, and Wireless Essentials",
     image: CCNA,
     issuer: "CISCO Network Academy",
     date: "2024"
   },
   {
-    id: 2,
+    id: 4,
     title: "C++ Training Crash Course 2022",
     image: UC1,
     issuer: "Udemy",
     date: "2024"
   },
   {
-    id: 3,
+    id: 5,
     title: "CSS, Bootstrap, JavaScript, PHP Full Stack Crash Course",
     image: UC2,
     issuer: "Udemy",
     date: "2024"
   },
   {
-    id: 4,
+    id: 6,
     title: "HTML5 and Python3 Complete Course 2023",
     image: UC3,
     issuer: "Udemy",

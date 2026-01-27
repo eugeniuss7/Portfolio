@@ -11,7 +11,7 @@ const roadmapData = [
   {
     month: "Q2 • 2024",
     title: "Software Design",
-    description: "Developed a software called CribConnect.",
+    description: "Developed a web application called CribConnect.",
     documentation: <a href="https://drive.google.com/file/d/1Zr_joZoE8kuLnlyjTo74RQHgxpvSPazN/view?usp=sharing" style={{ color: "rgba(255, 255, 255, 0.7)" }}>CribConnect Documentation</a>,
   },
   {
@@ -22,25 +22,31 @@ const roadmapData = [
   {
     month: "Q4 • 2024",
     title: "Data Science: Neural Networks",
-    description: "Studied Artificial Intellegence.",
+    description: "Studied Artificial Intelligence.",
   },
   {
     month: "Q1 • 2025",
     title: "Project NNOAH initiated",
     description: "Neural Network Oracle for Aqueous Height (NNOAH) project started.",
-    documentation: "On Going"
+    documentation: "Cancelled"
   },
   {
     month: "Q2 • 2025",
     title: "PIKOSEN website development",
     description: "Django + React website for coffee beans.",
-    documentation: "On Going"
+    URL: "https://pikosen.vercel.app/login/"
   },
   {
-    month: "Current • 2025",
+    month: "Q3 • 2025",
     title: "Books, Seminars, and Workshops",
     description: "Started reading O'Reilly books and attended seminars and workshops.",
     documentation: "GenAI, Time Series Analysis, Cloud Computing, etc.",
+  },
+  {
+    month: "Q4 • 2025",
+    title: "OSMAWSIS project initiated",
+    description: "Project Design named Open-pan Salt Making Apparatus With Closed Loop Integrated System.",
+    documentation: "On Going"
   },
 ];
 
