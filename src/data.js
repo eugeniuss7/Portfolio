@@ -42,13 +42,13 @@ export const tagColors = { Hardware: WARM, Software: BLUE, "Data Science": ACCEN
 // Each project: set img to an imported image; leave links empty to hide them.
 export const projects = [
   {
-    id: "osmawsis",
+    id: "asinc",
     img: Capstone,
     tag: "Hardware",
     year: "2026",
-    title: "OSMAWSIS",
-    desc: "Open-pan Salt Making Apparatus With Closed Loop Integrated System — a controlled closed-loop open-pan salt production system using a feedback control algorithm. Built as our capstone project with team Sustainnovators.",
-    status: "Capstone · exhibited at TIP",
+    title: "ASINC",
+    desc: "A controlled closed-loop open-pan salt production system using a feedback control algorithm. Built as our capstone project with team Sustainnovators — it won Best Project at the TIP CpE Symposium 2026.",
+    status: "Best Project · TIP CpE Symposium 2026",
     stack: ["Embedded systems", "Control loop", "Sensors"],
     links: {},
   },
@@ -109,7 +109,7 @@ export const education = [
   },
   {
     title: "Capstone project",
-    sub: "OSMAWSIS — a controlled closed-loop open-pan salt production system using a feedback control algorithm.",
+    sub: "ASINC — a closed-loop open-pan salt production system. Best Project, TIP CpE Symposium 2026.",
     dot: "muted",
   },
 ];
@@ -143,17 +143,17 @@ export function answer(q) {
   if (has("hello", "hi ", "hey") || t === "hi")
     return "Hey! What would you like to know — projects, skills, education, or contact details?";
   if (has("project", "built", "work", "portfolio"))
-    return "I've worked across hardware, software and data science.\nHighlights: PIKOSEN (Django + React e-commerce), Aristortle (maze-solving robot car), CribConnect (tenant–landowner platform), and OSMAWSIS, my ongoing project design.\nOpen the Projects tab to filter them by area.";
+    return "I've worked across hardware, software and data science.\nHighlights: PIKOSEN (Django + React e-commerce), Aristortle (maze-solving robot car), CribConnect (tenant–landowner platform), and ASINC, my capstone, which won Best Project at the TIP CpE Symposium 2026.\nOpen the Projects tab to filter them by area.";
   if (has("ai", "agent", "rag", "llm", "langchain", "generative"))
     return "I build agentic and generative AI applications — RAG pipelines, multi-agent systems with LangGraph and CrewAI, and tools over MCP. I hold the IBM RAG and Agentic AI Professional Certificate.";
   if (has("data", "machine", "ml", "model", "analytics", "neural"))
     return "Data science is my elective track. I've studied machine learning, analytics and neural networks, and applied them in NNOAH — a neural-network flood alert system that predicts water levels.";
   if (has("hardware", "embedded", "circuit", "robot", "arduino", "microcontroller"))
-    return "On the hardware side I built Aristortle, a robot car that solves mazes from sensor input, and I'm now working on OSMAWSIS, a closed-loop salt-making apparatus.";
+    return "On the hardware side I built Aristortle, a robot car that solves mazes from sensor input, and my capstone ASINC — a closed-loop salt production system that won Best Project at the TIP CpE Symposium 2026.";
   if (has("skill", "stack", "language", "tool"))
     return "Core stack: C++, Python, JavaScript.\nWeb: React, Django.\nData: machine learning, neural networks, Apache Spark.\nThe Credentials tab has the full list.";
   if (has("school", "education", "degree", "university", "study", "course"))
-    return `${profile.degree} at the ${profile.school} (${profile.years}, ${profile.location}), with an elective track in Data Science. My capstone was OSMAWSIS, a closed-loop salt production system.`;
+    return `${profile.degree} at the ${profile.school} (${profile.years}, ${profile.location}), with an elective track in Data Science. My capstone, ASINC, won Best Project at the TIP CpE Symposium 2026.`;
   if (has("cert", "credential", "license", "cisco", "ccna", "udemy"))
     return "Certifications: the IBM RAG and Agentic AI Professional Certificate (Coursera), plus CyberOps Associate and two CCNA courses from Cisco. You can view each one on the Credentials tab.";
   if (has("contact", "email", "hire", "reach", "available", "job", "intern"))
