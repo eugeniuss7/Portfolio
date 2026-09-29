@@ -117,8 +117,8 @@ export const education = [
 // A cert with `file` (e.g. a PDF) opens in a new tab; one with `image` opens in the viewer.
 export const certs = [
   { name: "IBM RAG and Agentic AI Professional Certificate", issuer: "IBM · Coursera", year: "2026", file: IBMRagCert, color: BLUE },
-  { name: "CyberOps Associate", issuer: "Cisco Networking Academy", year: "2024", image: CCNA3, color: ACCENT },
-  { name: "CCNA: Enterprise Networking, Security, and Automation", issuer: "Cisco Networking Academy", year: "2024", image: CCNA2, color: ACCENT },
+  { name: "CyberOps Associate", issuer: "Cisco Networking Academy", year: "2026", image: CCNA3, color: ACCENT },
+  { name: "CCNA: Enterprise Networking, Security, and Automation", issuer: "Cisco Networking Academy", year: "2025", image: CCNA2, color: ACCENT },
   { name: "CCNA: Switching, Routing, and Wireless Essentials", issuer: "Cisco Networking Academy", year: "2024", image: CCNA, color: ACCENT },
 ];
 
