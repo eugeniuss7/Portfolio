@@ -5,9 +5,9 @@ import CribConnect from "./assets/CribConnect.png";
 import CCNA from "./assets/CCNA.jpg";
 import CCNA2 from "./assets/CCNA2.jpg";
 import CCNA3 from "./assets/CCNA3.jpg";
-import UC1 from "./assets/UC C++.jpg";
-import UC2 from "./assets/UC Full Stack.jpg";
-import UC3 from "./assets/UC HTML5PY3.jpg";
+import Capstone from "./assets/capstone.jpg";
+import IBMRagCert from "./assets/Certificate 1 - Eugene Villegas.pdf";
+import Resume from "./assets/Eugene Villegas - Resume.pdf";
 
 export const ACCENT = "#4FD1C5";
 export const WARM = "#F5B546";
@@ -19,12 +19,12 @@ export const profile = {
   tagline: "computer engineering · data science",
   degree: "BS Computer Engineering",
   school: "Technological Institute of the Philippines",
-  years: "2022 – Present",
+  years: "2022 – 2026",
   location: "Manila",
-  email: "eugenevillegas47@gmail.com",
+  email: "villegase.cpe@gmail.com",
   github: "https://github.com/eugeniuss7",
   linkedin: "",
-  resume: "",
+  resume: Resume,
   summary:
     "From circuits and embedded code to models that make sense of what sensors collect. I use what I know to build software that addresses real problems in our community — and keep sharpening those skills one systematic step at a time.",
   stack: ["python", "c++", "javascript", "react", "django", "spark"],
@@ -43,12 +43,12 @@ export const tagColors = { Hardware: WARM, Software: BLUE, "Data Science": ACCEN
 export const projects = [
   {
     id: "osmawsis",
-    img: "",
+    img: Capstone,
     tag: "Hardware",
-    year: "2025",
+    year: "2026",
     title: "OSMAWSIS",
-    desc: "Open-pan Salt Making Apparatus With Closed Loop Integrated System — an automated salt-making rig driven by a closed-loop control system.",
-    status: "Ongoing · project design",
+    desc: "Open-pan Salt Making Apparatus With Closed Loop Integrated System — a controlled closed-loop open-pan salt production system using a feedback control algorithm. Built as our capstone project with team Sustainnovators.",
+    status: "Capstone · exhibited at TIP",
     stack: ["Embedded systems", "Control loop", "Sensors"],
     links: {},
   },
@@ -108,22 +108,22 @@ export const education = [
     dot: "warm",
   },
   {
-    title: "Project design",
-    sub: "OSMAWSIS — Open-pan Salt Making Apparatus With Closed Loop Integrated System (ongoing).",
+    title: "Capstone project",
+    sub: "OSMAWSIS — a controlled closed-loop open-pan salt production system using a feedback control algorithm.",
     dot: "muted",
   },
 ];
 
+// A cert with `file` (e.g. a PDF) opens in a new tab; one with `image` opens in the viewer.
 export const certs = [
+  { name: "IBM RAG and Agentic AI Professional Certificate", issuer: "IBM · Coursera", year: "2026", file: IBMRagCert, color: BLUE },
   { name: "CyberOps Associate", issuer: "Cisco Networking Academy", year: "2024", image: CCNA3, color: ACCENT },
   { name: "CCNA: Enterprise Networking, Security, and Automation", issuer: "Cisco Networking Academy", year: "2024", image: CCNA2, color: ACCENT },
   { name: "CCNA: Switching, Routing, and Wireless Essentials", issuer: "Cisco Networking Academy", year: "2024", image: CCNA, color: ACCENT },
-  { name: "C++ Training Crash Course 2022", issuer: "Udemy", year: "2024", image: UC1, color: BLUE },
-  { name: "CSS, Bootstrap, JavaScript, PHP Full Stack Crash Course", issuer: "Udemy", year: "2024", image: UC2, color: BLUE },
-  { name: "HTML5 and Python3 Complete Course 2023", issuer: "Udemy", year: "2024", image: UC3, color: BLUE },
 ];
 
 export const skills = [
+  { group: "AI engineering", items: ["LangChain", "LangGraph", "LlamaIndex", "RAG", "CrewAI", "MCP"] },
   { group: "Programming", items: ["C++", "Python", "JavaScript"] },
   { group: "Web", items: ["React", "Django", "PHP", "HTML/CSS"] },
   { group: "Data science", items: ["Machine learning", "Neural networks", "Apache Spark", "Time series"] },
@@ -144,6 +144,8 @@ export function answer(q) {
     return "Hey! What would you like to know — projects, skills, education, or contact details?";
   if (has("project", "built", "work", "portfolio"))
     return "I've worked across hardware, software and data science.\nHighlights: PIKOSEN (Django + React e-commerce), Aristortle (maze-solving robot car), CribConnect (tenant–landowner platform), and OSMAWSIS, my ongoing project design.\nOpen the Projects tab to filter them by area.";
+  if (has("ai", "agent", "rag", "llm", "langchain", "generative"))
+    return "I build agentic and generative AI applications — RAG pipelines, multi-agent systems with LangGraph and CrewAI, and tools over MCP. I hold the IBM RAG and Agentic AI Professional Certificate.";
   if (has("data", "machine", "ml", "model", "analytics", "neural"))
     return "Data science is my elective track. I've studied machine learning, analytics and neural networks, and applied them in NNOAH — a neural-network flood alert system that predicts water levels.";
   if (has("hardware", "embedded", "circuit", "robot", "arduino", "microcontroller"))
@@ -151,9 +153,9 @@ export function answer(q) {
   if (has("skill", "stack", "language", "tool"))
     return "Core stack: C++, Python, JavaScript.\nWeb: React, Django.\nData: machine learning, neural networks, Apache Spark.\nThe Credentials tab has the full list.";
   if (has("school", "education", "degree", "university", "study", "course"))
-    return `${profile.degree} at the ${profile.school} (${profile.years}, ${profile.location}), with an elective track in Data Science.`;
+    return `${profile.degree} at the ${profile.school} (${profile.years}, ${profile.location}), with an elective track in Data Science. My capstone was OSMAWSIS, a closed-loop salt production system.`;
   if (has("cert", "credential", "license", "cisco", "ccna", "udemy"))
-    return "Certifications: CyberOps Associate and two CCNA courses from Cisco, plus C++, full-stack and HTML5/Python courses on Udemy. You can view each one on the Credentials tab.";
+    return "Certifications: the IBM RAG and Agentic AI Professional Certificate (Coursera), plus CyberOps Associate and two CCNA courses from Cisco. You can view each one on the Credentials tab.";
   if (has("contact", "email", "hire", "reach", "available", "job", "intern"))
     return `Best way to reach me: ${profile.email}.`;
   return "I'm a small assistant with a few prepared answers. Try asking about projects, skills, data science, education, or how to get in touch.";

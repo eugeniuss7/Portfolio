@@ -62,9 +62,15 @@ function Credentials() {
                 <div className="cert-name">{c.name}</div>
                 <div className="muted-sm">{c.issuer} · {c.year}</div>
               </div>
-              <button type="button" className="icon-link" aria-label={`View ${c.name} certificate`} onClick={() => setOpen(c)}>
-                <ArrowUpRight />
-              </button>
+              {c.file ? (
+                <a className="icon-link" href={c.file} target="_blank" rel="noreferrer" aria-label={`View ${c.name} certificate`}>
+                  <ArrowUpRight />
+                </a>
+              ) : (
+                <button type="button" className="icon-link" aria-label={`View ${c.name} certificate`} onClick={() => setOpen(c)}>
+                  <ArrowUpRight />
+                </button>
+              )}
             </div>
           ))}
         </div>
