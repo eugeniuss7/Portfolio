@@ -6,12 +6,14 @@ import CCNA from "./assets/CCNA.jpg";
 import CCNA2 from "./assets/CCNA2.jpg";
 import CCNA3 from "./assets/CCNA3.jpg";
 import Capstone from "./assets/capstone.jpg";
+import IBMCapstone from "./assets/ibm capstone.jpg";
 import IBMRagCert from "./assets/Certificate 1 - Eugene Villegas.pdf";
 import Resume from "./assets/Eugene Villegas - Resume.pdf";
 
 export const ACCENT = "#4FD1C5";
 export const WARM = "#F5B546";
 export const BLUE = "#7AA2FF";
+export const VIOLET = "#C4A1FF";
 
 export const profile = {
   name: "Eugene D. Villegas",
@@ -37,9 +39,10 @@ export const PAGES = [
   { id: "chat", label: "Chat" },
 ];
 
-export const tagColors = { Hardware: WARM, Software: BLUE, "Data Science": ACCENT };
+export const tagColors = { AI: VIOLET, Hardware: WARM, Software: BLUE, "Data Science": ACCENT };
 
-// Each project: set img to an imported image; leave links empty to hide them.
+// Each project: set img to an imported image (fit: "contain" shows a tall image whole);
+// leave links empty to hide them.
 export const projects = [
   {
     id: "asinc",
@@ -50,6 +53,18 @@ export const projects = [
     desc: "A controlled closed-loop open-pan salt production system using a feedback control algorithm. Built as our capstone project with team Sustainnovators — it won Best Project at the TIP CpE Symposium 2026.",
     status: "Best Project · TIP CpE Symposium 2026",
     stack: ["Embedded systems", "Control loop", "Sensors"],
+    links: {},
+  },
+  {
+    id: "connoisseur",
+    img: IBMCapstone,
+    fit: "contain",
+    tag: "AI",
+    year: "2026",
+    title: "Connoisseur Companion",
+    desc: "A restaurant and recipe recommendation chatbot built on a multimodal RAG pipeline, giving personalized dining and recipe insights. Capstone for the IBM RAG and Agentic AI Professional Certificate.",
+    status: "IBM certificate capstone",
+    stack: ["Python", "LangChain", "LlamaIndex", "OpenAI API", "Gradio"],
     links: {},
   },
   {
@@ -143,9 +158,9 @@ export function answer(q) {
   if (has("hello", "hi ", "hey") || t === "hi")
     return "Hey! What would you like to know — projects, skills, education, or contact details?";
   if (has("project", "built", "work", "portfolio"))
-    return "I've worked across hardware, software and data science.\nHighlights: PIKOSEN (Django + React e-commerce), Aristortle (maze-solving robot car), CribConnect (tenant–landowner platform), and ASINC, my capstone, which won Best Project at the TIP CpE Symposium 2026.\nOpen the Projects tab to filter them by area.";
+    return "I've worked across hardware, software and data science.\nHighlights: Connoisseur Companion (a multimodal RAG recommendation chatbot), PIKOSEN (Django + React e-commerce), Aristortle (maze-solving robot car), CribConnect (tenant–landowner platform), and ASINC, my capstone, which won Best Project at the TIP CpE Symposium 2026.\nOpen the Projects tab to filter them by area.";
   if (has("ai", "agent", "rag", "llm", "langchain", "generative"))
-    return "I build agentic and generative AI applications — RAG pipelines, multi-agent systems with LangGraph and CrewAI, and tools over MCP. I hold the IBM RAG and Agentic AI Professional Certificate.";
+    return "I build agentic and generative AI applications — RAG pipelines, multi-agent systems with LangGraph and CrewAI, and tools over MCP. I hold the IBM RAG and Agentic AI Professional Certificate — its capstone was Connoisseur Companion, a multimodal RAG chatbot for restaurant and recipe recommendations.";
   if (has("data", "machine", "ml", "model", "analytics", "neural"))
     return "Data science is my elective track. I've studied machine learning, analytics and neural networks, and applied them in NNOAH — a neural-network flood alert system that predicts water levels.";
   if (has("hardware", "embedded", "circuit", "robot", "arduino", "microcontroller"))

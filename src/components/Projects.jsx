@@ -2,7 +2,7 @@ import { useState } from "react";
 import { projects, tagColors } from "../data";
 import { ChevronLeft, ChevronRight, Photo, TagIcon } from "./Icons";
 
-const FILTERS = ["All", "Hardware", "Software", "Data Science"];
+const FILTERS = ["All", "AI", "Hardware", "Software", "Data Science"];
 
 const LINK_LABELS = { source: "Source code", writeup: "Write-up", demo: "Demo" };
 
@@ -64,7 +64,7 @@ function Projects() {
       <div role="tabpanel" aria-label="Project details" className="detail">
         <div className="detail-media">
           {cur.img ? (
-            <img src={cur.img} alt={cur.title} />
+            <img src={cur.img} alt={cur.title} style={{ objectFit: cur.fit || "cover" }} />
           ) : (
             <div className="ph ph-col" style={{ color: tagColors[cur.tag] }}>
               <Photo />
