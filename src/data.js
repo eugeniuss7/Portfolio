@@ -18,7 +18,10 @@ export const VIOLET = "#C4A1FF";
 export const profile = {
   name: "Eugene D. Villegas",
   initials: "EV",
-  tagline: "computer engineering · data science",
+  role: "AI Developer",
+  tagline: "AI developer · computer engineer",
+  // Shown as a status chip in the hero; set to "" to hide it.
+  availability: "Open to AI developer roles",
   degree: "BS Computer Engineering",
   school: "Technological Institute of the Philippines",
   years: "2022 – 2026",
@@ -39,6 +42,31 @@ export const PAGES = [
   { id: "chat", label: "Chat" },
 ];
 
+// Headline numbers on the home page.
+export const stats = [
+  { value: "72%", label: "Drafting time cut by my AutoCAD automation prototype" },
+  { value: "Best Project", label: "ASINC at the TIP CpE Symposium 2026" },
+  { value: "1.84", label: "Final CGPA — Dean's List standing" },
+  { value: "10", label: "Courses in the IBM RAG & Agentic AI certificate" },
+];
+
+export const experience = [
+  {
+    role: "Automation Intern",
+    org: "PhilTowers MIDC Consortium Inc.",
+    period: "Feb – Apr 2026",
+    points: [
+      "Built an AutoCAD automation prototype that removes manual drafting of tower configurations and title blocks, cutting drafting time by about 72%.",
+      "Worked with AutoCAD drafters to scope automation features and convert existing VBA scripts to Python.",
+      "Presented the results to the Director of Engineering and proposed next steps based on drafter feedback.",
+    ],
+    stack: ["Python", "AutoCAD", "VBA"],
+  },
+];
+
+// Project ids shown on the home page, in order.
+export const featured = ["asinc", "connoisseur", "pikosen"];
+
 export const tagColors = { AI: VIOLET, Hardware: WARM, Software: BLUE, "Data Science": ACCENT };
 
 // Each project: set img to an imported image (fit: "contain" shows a tall image whole);
@@ -52,6 +80,7 @@ export const projects = [
     title: "ASINC",
     desc: "A controlled closed-loop open-pan salt production system using a feedback control algorithm. Built as our capstone project with team Sustainnovators — it won Best Project at the TIP CpE Symposium 2026.",
     status: "Best Project · TIP CpE Symposium 2026",
+    award: "Best Project",
     stack: ["Embedded systems", "Control loop", "Sensors"],
     links: {},
   },
@@ -147,7 +176,7 @@ export const skills = [
 
 export const suggestions = [
   "What projects have you built?",
-  "What did you learn in data science?",
+  "Tell me about your AI work",
   "What's your tech stack?",
   "How can I contact you?",
 ];
@@ -171,7 +200,9 @@ export function answer(q) {
     return `${profile.degree} at the ${profile.school} (${profile.years}, ${profile.location}), with an elective track in Data Science. My capstone, ASINC, won Best Project at the TIP CpE Symposium 2026.`;
   if (has("cert", "credential", "license", "cisco", "ccna", "udemy"))
     return "Certifications: the IBM RAG and Agentic AI Professional Certificate (Coursera), plus CyberOps Associate and two CCNA courses from Cisco. You can view each one on the Credentials tab.";
-  if (has("contact", "email", "hire", "reach", "available", "job", "intern"))
+  if (has("experience", "intern", "job", "autocad", "philtowers"))
+    return "I interned as an Automation Intern at PhilTowers MIDC Consortium Inc. (Feb – Apr 2026), where I built an AutoCAD automation prototype that cut drafting time by about 72% and presented it to the Director of Engineering.";
+  if (has("contact", "email", "hire", "reach", "available"))
     return `Best way to reach me: ${profile.email}.`;
   return "I'm a small assistant with a few prepared answers. Try asking about projects, skills, data science, education, or how to get in touch.";
 }

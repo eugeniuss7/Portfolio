@@ -1,19 +1,22 @@
+import { motion } from "framer-motion";
 import { PAGES, profile } from "../data";
 import { Download } from "./Icons";
 
 // Without a hosted résumé yet, the button opens an email asking for one.
 const resumeHref = profile.resume || `mailto:${profile.email}?subject=R%C3%A9sum%C3%A9%20request`;
 
+const MotionSpan = motion.span;
+
 function Header({ page, onNavigate }) {
   return (
     <header className="topbar">
-      <div className="brand">
-        <div className="monogram">{profile.initials}</div>
-        <div className="brand-text">
-          <div className="brand-name">{profile.name}</div>
-          <div className="mono muted-sm">{profile.tagline}</div>
-        </div>
-      </div>
+      <button type="button" className="brand" onClick={() => onNavigate("home")} aria-label="Home">
+        <span className="monogram">{profile.initials}</span>
+        <span className="brand-text">
+          <span className="brand-name">{profile.name}</span>
+          <span className="brand-sub">{profile.tagline}</span>
+        </span>
+      </button>
       <nav aria-label="Primary" className="nav">
         {PAGES.map((p) => (
           <button
@@ -23,7 +26,10 @@ function Header({ page, onNavigate }) {
             aria-current={p.id === page ? "page" : undefined}
             onClick={() => onNavigate(p.id)}
           >
-            {p.label}
+            {p.id === page && (
+              <MotionSpan layoutId="nav-pill" className="nav-pill" transition={{ type: "spring", stiffness: 420, damping: 34 }} />
+            )}
+            <span className="nav-label">{p.label}</span>
           </button>
         ))}
       </nav>

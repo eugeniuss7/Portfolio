@@ -32,8 +32,6 @@ export const Graph = ({ size = 28, stroke, width = 1.6 }) => (
   </svg>
 );
 
-export const TagIcon = ({ tag, ...props }) =>
-  tag === "Hardware" ? <Chip {...props} /> : tag === "Software" ? <Code {...props} /> : <Graph {...props} />;
 
 export const Download = () => (
   <svg {...base} width="16" height="16" strokeWidth="2">
@@ -96,3 +94,77 @@ export const Close = () => (
     <path d="M18 6 6 18M6 6l12 12" />
   </svg>
 );
+
+export const Sparkle = ({ size = 28, stroke, width = 1.6 }) => (
+  <svg {...base} width={size} height={size} stroke={stroke || "currentColor"} strokeWidth={width}>
+    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+    <path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7L19 15z" />
+  </svg>
+);
+
+export const Play = () => (
+  <svg {...base} width="16" height="16" fill="currentColor" stroke="none">
+    <path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" />
+  </svg>
+);
+
+export const Pause = () => (
+  <svg {...base} width="16" height="16" fill="currentColor" stroke="none">
+    <rect x="5.5" y="4" width="4.5" height="16" rx="1.2" />
+    <rect x="14" y="4" width="4.5" height="16" rx="1.2" />
+  </svg>
+);
+
+export const Volume = () => (
+  <svg {...base} width="16" height="16" strokeWidth="2">
+    <path d="M11 5 6 9H3v6h3l5 4V5z" />
+    <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
+  </svg>
+);
+
+export const VolumeOff = () => (
+  <svg {...base} width="16" height="16" strokeWidth="2">
+    <path d="M11 5 6 9H3v6h3l5 4V5z" />
+    <path d="m16 9 5 6M21 9l-5 6" />
+  </svg>
+);
+
+export const Trophy = ({ size = 18 }) => (
+  <svg {...base} width={size} height={size} strokeWidth="1.8">
+    <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z" />
+    <path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3" />
+  </svg>
+);
+
+export const Mail = () => (
+  <svg {...base} width="18" height="18" strokeWidth="1.8">
+    <rect x="3" y="5" width="18" height="14" rx="2.5" />
+    <path d="m4 7 8 6 8-6" />
+  </svg>
+);
+
+export const Copy = () => (
+  <svg {...base} width="16" height="16" strokeWidth="1.8">
+    <rect x="9" y="9" width="11" height="11" rx="2.5" />
+    <path d="M5 15V6a2 2 0 0 1 2-2h9" />
+  </svg>
+);
+
+export const Check = () => (
+  <svg {...base} width="16" height="16" strokeWidth="2.2">
+    <path d="m5 12.5 4.5 4.5L19 7.5" />
+  </svg>
+);
+
+export const Expand = () => (
+  <svg {...base} width="16" height="16" strokeWidth="2">
+    <path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" />
+  </svg>
+);
+
+const TAG_ICONS = { AI: Sparkle, Hardware: Chip, Software: Code };
+
+export const TagIcon = ({ tag, ...props }) => {
+  const Icon = TAG_ICONS[tag] || Graph;
+  return <Icon {...props} />;
+};

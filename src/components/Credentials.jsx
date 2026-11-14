@@ -1,29 +1,8 @@
-import { useEffect, useState } from "react";
-import { certs, education, skills } from "../data";
-import { ArrowUpRight, Close, Medal } from "./Icons";
-
-function CertModal({ cert, onClose }) {
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
-
-  return (
-    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={cert.name} onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button type="button" className="icon-btn modal-close" aria-label="Close" onClick={onClose} autoFocus>
-          <Close />
-        </button>
-        <img src={cert.image} alt={cert.name} />
-        <div className="modal-info">
-          <div className="modal-title">{cert.name}</div>
-          <div className="muted-sm">{cert.issuer} · {cert.year}</div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { useState } from "react";
+import { certs, education, experience, skills } from "../data";
+import { ArrowUpRight, Medal } from "./Icons";
+import Lightbox from "./Lightbox";
+import Reveal from "./Reveal";
 
 function Credentials() {
   const [open, setOpen] = useState(null);
@@ -31,13 +10,34 @@ function Credentials() {
   return (
     <section className="page">
       <div className="section-title">
-        <div className="eyebrow">// education, certifications &amp; skills</div>
-        <h2>Credentials</h2>
+        <div className="eyebrow">Experience, education &amp; skills</div>
+        <h1 className="page-title">Credentials</h1>
       </div>
 
       <div className="creds">
-        <div className="panel creds-col">
-          <div className="label mono">EDUCATION</div>
+        <Reveal className="panel creds-col wide">
+          <div className="label mono">Experience</div>
+          {experience.map((x) => (
+            <div key={x.role + x.org} className="xp">
+              <div className="xp-head">
+                <div>
+                  <div className="xp-role">{x.role}</div>
+                  <div className="xp-org">{x.org}</div>
+                </div>
+                <div className="mono dim-sm">{x.period}</div>
+              </div>
+              <ul className="xp-points">
+                {x.points.map((pt) => <li key={pt}>{pt}</li>)}
+              </ul>
+              <div className="chips">
+                {x.stack.map((s) => <span key={s} className="chip mono">{s}</span>)}
+              </div>
+            </div>
+          ))}
+        </Reveal>
+
+        <Reveal className="panel creds-col" delay={0.06}>
+          <div className="label mono">Education</div>
           {education.map((e, i) => (
             <div key={e.title} className="edu">
               <div className="edu-rail">
@@ -51,46 +51,48 @@ function Credentials() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="panel creds-col tight">
-          <div className="label mono">CERTIFICATIONS</div>
-          {certs.map((c) => (
-            <div key={c.name} className="cert">
-              <div className="cert-icon"><Medal stroke={c.color} /></div>
-              <div className="cert-text">
-                <div className="cert-name">{c.name}</div>
-                <div className="muted-sm">{c.issuer} · {c.year}</div>
-              </div>
-              {c.file ? (
-                <a className="icon-link" href={c.file} target="_blank" rel="noreferrer" aria-label={`View ${c.name} certificate`}>
-                  <ArrowUpRight />
-                </a>
-              ) : (
-                <button type="button" className="icon-link" aria-label={`View ${c.name} certificate`} onClick={() => setOpen(c)}>
-                  <ArrowUpRight />
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
+        <Reveal className="panel creds-col tight" delay={0.1}>
+          <div className="label mono">Certifications</div>
+          {certs.map((c) => {
+            const label = `View ${c.name} certificate`;
+            const inner = (
+              <>
+                <span className="cert-icon"><Medal stroke={c.color} /></span>
+                <span className="cert-text">
+                  <span className="cert-name">{c.name}</span>
+                  <span className="muted-sm">{c.issuer} · {c.year}</span>
+                </span>
+                <span className="cert-arrow"><ArrowUpRight /></span>
+              </>
+            );
+            return c.file ? (
+              <a key={c.name} className="cert" href={c.file} target="_blank" rel="noreferrer" aria-label={label}>{inner}</a>
+            ) : (
+              <button key={c.name} type="button" className="cert" aria-label={label} onClick={() => setOpen(c)}>{inner}</button>
+            );
+          })}
+        </Reveal>
 
-        <div className="panel creds-col">
-          <div className="label mono">SKILLS</div>
-          {skills.map((g) => (
-            <div key={g.group} className="skill-group">
-              <div className="skill-title">{g.group}</div>
-              <div className="chips">
-                {g.items.map((s) => (
-                  <span key={s} className="skill mono">{s}</span>
-                ))}
+        <Reveal className="panel creds-col wide" delay={0.14}>
+          <div className="label mono">Skills</div>
+          <div className="skill-grid">
+            {skills.map((g) => (
+              <div key={g.group} className="skill-group">
+                <div className="skill-title">{g.group}</div>
+                <div className="chips">
+                  {g.items.map((s) => (
+                    <span key={s} className="skill mono">{s}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
 
-      {open && <CertModal cert={open} onClose={() => setOpen(null)} />}
+      {open && <Lightbox src={open.image} title={open.name} sub={`${open.issuer} · ${open.year}`} onClose={() => setOpen(null)} />}
     </section>
   );
 }

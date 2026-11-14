@@ -35,8 +35,8 @@ function Chat() {
   return (
     <section className="page chat-page">
       <div className="chat-side">
-        <div className="eyebrow">// let's talk</div>
-        <h2>Ask me anything.</h2>
+        <div className="eyebrow">Let’s talk</div>
+        <h1 className="page-title">Ask me <em>anything.</em></h1>
         <p className="lead sm">A quick assistant that knows my projects, skills and background. For anything else, reach me directly.</p>
         <div className="suggestions">
           <div className="label mono">TRY ASKING</div>
