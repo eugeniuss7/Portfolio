@@ -1,42 +1,53 @@
-import { motion } from "framer-motion";
-import { PAGES, profile } from "../data";
-import { Download } from "./Icons";
+import { useEffect, useState } from "react";
+import { NAV, profile } from "../data";
+import { ArrowRight } from "./Icons";
 
-// Without a hosted résumé yet, the button opens an email asking for one.
-const resumeHref = profile.resume || `mailto:${profile.email}?subject=R%C3%A9sum%C3%A9%20request`;
+// Highlights the nav link for whichever section is currently under the header.
+function useActiveSection() {
+  const [active, setActive] = useState(NAV[0].id);
 
-const MotionSpan = motion.span;
+  useEffect(() => {
+    const onScroll = () => {
+      const line = window.scrollY + 140;
+      let current = NAV[0].id;
+      for (const { id } of NAV) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= line) current = id;
+      }
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-function Header({ page, onNavigate }) {
+  return active;
+}
+
+function Header() {
+  const active = useActiveSection();
+
   return (
     <header className="topbar">
-      <button type="button" className="brand" onClick={() => onNavigate("home")} aria-label="Home">
-        <span className="monogram">{profile.initials}</span>
-        <span className="brand-text">
-          <span className="brand-name">{profile.name}</span>
-          <span className="brand-sub">{profile.tagline}</span>
-        </span>
-      </button>
-      <nav aria-label="Primary" className="nav">
-        {PAGES.map((p) => (
-          <button
-            key={p.id}
-            type="button"
-            className={p.id === page ? "nav-btn active" : "nav-btn"}
-            aria-current={p.id === page ? "page" : undefined}
-            onClick={() => onNavigate(p.id)}
-          >
-            {p.id === page && (
-              <MotionSpan layoutId="nav-pill" className="nav-pill" transition={{ type: "spring", stiffness: 420, damping: 34 }} />
-            )}
-            <span className="nav-label">{p.label}</span>
-          </button>
-        ))}
-      </nav>
-      <a className="resume" href={resumeHref} target={profile.resume ? "_blank" : undefined} rel="noreferrer">
-        <Download />
-        Résumé
-      </a>
+      <div className="wrap topbar-inner">
+        <a href="#top" className="brand">
+          <span className="monogram" aria-hidden="true">{profile.initials}</span>
+          <span className="brand-text">
+            <span className="brand-name">{profile.name}</span>
+            <span className="brand-sub">{profile.tagline}</span>
+          </span>
+        </a>
+        <nav aria-label="Sections" className="nav">
+          {NAV.map((n) => (
+            <a key={n.id} href={`#${n.id}`} className={n.id === active ? "nav-link active" : "nav-link"} aria-current={n.id === active ? "true" : undefined}>
+              {n.label}
+            </a>
+          ))}
+        </nav>
+        <a href="#contact" className="btn btn-outline btn-sm">
+          Hire me <ArrowRight />
+        </a>
+      </div>
     </header>
   );
 }

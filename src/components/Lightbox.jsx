@@ -14,15 +14,15 @@ function Lightbox({ src, title, sub, onClose }) {
   }, [onClose]);
 
   return (
-    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={title} onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button type="button" className="icon-btn modal-close" aria-label="Close" onClick={onClose} autoFocus>
+    <div className="overlay" role="dialog" aria-modal="true" aria-label={title} onClick={onClose}>
+      <div className="lightbox" onClick={(e) => e.stopPropagation()}>
+        <button type="button" className="round-btn ink plate-close" aria-label="Close" onClick={onClose} autoFocus>
           <Close />
         </button>
         <img src={src} alt={title} />
-        <div className="modal-info">
-          <div className="modal-title">{title}</div>
-          {sub && <div className="muted-sm">{sub}</div>}
+        <div className="lightbox-info">
+          <div className="lightbox-title">{title}</div>
+          {sub && <div className="moss">{sub}</div>}
         </div>
       </div>
     </div>
